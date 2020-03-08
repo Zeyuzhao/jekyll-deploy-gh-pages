@@ -3,7 +3,7 @@
 We're only deploying the site here. Site files should be sitting in `build` having presumably just been built, post-processed, etc.
 
 ## Secrets
-* `DEPLOY_TOKEN`: Access key scoped to the repository, we need this to push the site files back to the repo. (specify in workflow)
+* `GITHUB_TOKEN`: Access key scoped to the repository, we need this to push the site files back to the repo. (specify in workflow)
   
 ## Environment Variables
 * `GITHUB_ACTOR`: Username of repo owner or object intiating the action (GitHub Provides)
@@ -19,7 +19,7 @@ workflow "Deploy Jekyll" {
 
 action "Deploy Jekyll" {
   uses = "BryanSchuetz/jekyll-deploy-gh-pages/deploy@master"
-  secrets = ["DEPLOY_TOKEN"]
+  secrets = ["GITHUB_TOKEN"]
   needs = "BryanSchuetz/jekyll-deploy-gh-pages/build@master"
 }
 ```
