@@ -8,7 +8,7 @@ gem environment
 
 echo 'attempting to chmod ruby folder (for action cache)'
 
-ls -al
+ls -al ../
 chmod -R 744 ~/.gem/ruby
 
 echo '👍 ENTRYPOINT HAS STARTED—INSTALLING THE GEM BUNDLE'
