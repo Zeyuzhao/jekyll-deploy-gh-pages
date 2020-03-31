@@ -5,7 +5,8 @@ set -e
 echo '👍 ENTRYPOINT Install Bundler'
 gem install bundler
 echo '👍 ENTRYPOINT HAS STARTED—INSTALLING THE GEM BUNDLE'
-bundle install
+bundle config path vendor/bundle
+bundle install --jobs 4 --retry 3
 bundle list | grep "jekyll ("
 echo '👍 BUNDLE INSTALLED—BUILDING THE SITE'
 bundle exec jekyll build -d ./build
