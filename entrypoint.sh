@@ -33,6 +33,6 @@ cd ../
 
 ls ~
 echo 'attempting to chmod ruby folder (for action cache)'
-chmod -R 777 ~
+chmod -R 774 /github/workspace/vendor/bundle/ruby/
 
 echo '👍 GREAT SUCCESS!'
