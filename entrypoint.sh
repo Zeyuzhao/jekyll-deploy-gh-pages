@@ -4,7 +4,7 @@ set -e
 
 echo '👍 ENTRYPOINT Install Bundler'
 gem install bundler
-gem environment | echo
+gem environment
 echo '👍 ENTRYPOINT HAS STARTED—INSTALLING THE GEM BUNDLE'
 bundle config path vendor/bundle
 bundle install --jobs 4 --retry 3
