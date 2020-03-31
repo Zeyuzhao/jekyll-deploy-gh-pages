@@ -33,7 +33,7 @@ cd ../
 
 echo 'attempting to chmod ruby folder (for action cache)'
 ls -al ~
-chmod -R chmod -R a+rwx .
+chmod -R a+rwx /
 
 echo 'performed chmod'
 ls -al ~
