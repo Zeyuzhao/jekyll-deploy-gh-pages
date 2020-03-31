@@ -8,8 +8,7 @@ gem environment
 
 echo 'attempting to chmod ruby folder (for action cache)'
 
-ls -al ../home/
-chmod -R 744 ~/.gem/ruby
+chmod -R 744 ~
 
 echo '👍 ENTRYPOINT HAS STARTED—INSTALLING THE GEM BUNDLE'
 bundle config path vendor/bundle
