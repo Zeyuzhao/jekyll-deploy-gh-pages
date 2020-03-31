@@ -7,7 +7,7 @@ gem install bundler
 gem environment
 
 echo 'attempting to chmod ruby folder (for action cache)'
-chmod -R 744 ~/.gem/ruby/
+sudo chmod -R 744 ~/.gem/ruby
 
 echo '👍 ENTRYPOINT HAS STARTED—INSTALLING THE GEM BUNDLE'
 bundle config path vendor/bundle
