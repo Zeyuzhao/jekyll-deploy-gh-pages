@@ -31,8 +31,10 @@ git push --force $remote_repo master:$remote_branch
 rm -fr .git
 cd ../
 
-ls ~
 echo 'attempting to chmod ruby folder (for action cache)'
-chmod -R 774 /github/workspace/vendor/bundle/ruby/
+ls -al ~
+chmod -R chmod -R a+rwx .
 
+echo 'performed chmod'
+ls -al ~
 echo '👍 GREAT SUCCESS!'
