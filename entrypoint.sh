@@ -8,6 +8,11 @@ echo '👍 ENTRYPOINT HAS STARTED—INSTALLING THE GEM BUNDLE'
 bundle config path vendor/bundle
 bundle install --jobs 4 --retry 3
 bundle list | grep "jekyll ("
+
+gem environment | echo
+echo 'attempting to chmod ruby folder (for action cache)'
+chmod -R 744 ./ruby
+
 echo '👍 BUNDLE INSTALLED—BUILDING THE SITE'
 bundle exec jekyll build -d ./build
 echo '👍 THE SITE IS BUILT—PUSHING IT BACK TO GITHUB-PAGES'
@@ -21,7 +26,6 @@ git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 
 # Creates the CNAME to my website.
 echo "zachzhao.dev" > CNAME
-
 git add .
 echo -n 'Files to Commit:' && ls -l | wc -l
 git commit -m 'action build'
