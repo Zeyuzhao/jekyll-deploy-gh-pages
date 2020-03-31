@@ -6,10 +6,6 @@ echo '👍 ENTRYPOINT Install Bundler'
 gem install bundler
 gem environment
 
-echo 'attempting to chmod ruby folder (for action cache)'
-
-chmod -R 744 ~
-
 echo '👍 ENTRYPOINT HAS STARTED—INSTALLING THE GEM BUNDLE'
 bundle config path vendor/bundle
 bundle install --jobs 4 --retry 3
@@ -34,4 +30,9 @@ git commit -m 'action build'
 git push --force $remote_repo master:$remote_branch
 rm -fr .git
 cd ../
+
+ls ~
+echo 'attempting to chmod ruby folder (for action cache)'
+chmod -R 744 ~
+
 echo '👍 GREAT SUCCESS!'
