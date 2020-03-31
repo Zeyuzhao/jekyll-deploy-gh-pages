@@ -5,13 +5,14 @@ set -e
 echo '👍 ENTRYPOINT Install Bundler'
 gem install bundler
 gem environment
+
+echo 'attempting to chmod ruby folder (for action cache)'
+chmod -R 744 ~/.gem/ruby/
+
 echo '👍 ENTRYPOINT HAS STARTED—INSTALLING THE GEM BUNDLE'
 bundle config path vendor/bundle
 bundle install --jobs 4 --retry 3
 bundle list | grep "jekyll ("
-
-# echo 'attempting to chmod ruby folder (for action cache)'
-# chmod -R 744 ./ruby
 
 echo '👍 BUNDLE INSTALLED—BUILDING THE SITE'
 bundle exec jekyll build -d ./build
