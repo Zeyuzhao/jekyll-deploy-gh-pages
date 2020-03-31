@@ -17,6 +17,10 @@ remote_branch="gh-pages"
 git init
 git config user.name "${GITHUB_ACTOR}"
 git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+
+# Creates the CNAME to my website.
+echo "zachzhao.dev" > CNAME
+
 git add .
 echo -n 'Files to Commit:' && ls -l | wc -l
 git commit -m 'action build'
